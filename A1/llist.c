@@ -2,65 +2,74 @@
 #include <stdlib.h>
 #include "llist.h"
 
-typedef struct{
-    int value;
-    NODE *next;
-}NODE;
-
-//pointer to the head of the linked list
-typedef NODE *LLIST;
-
 LLIST createList(){
-    LLIST L;
-    L = (LLIST)malloc(sizeof(NODE));
-    L->value = 0;
-    L->next = NULL;
+    LLIST L=NULL;
     return L;
 }
 
 LLIST insertAtFront(LLIST H, int k){
     //create new node and make it the head node
-    NODE N;
-    N.value = k;
-    N.next = H;
-    H = &N;
+    NODEP N = (NODEP)malloc(sizeof(NODE));
+    N->value = k;
+    N->next = H;
+    H = N;
     return H;
 }
 
 LLIST insertAtEnd(LLIST H, int k){
-    LLIST P = H;
     //create new node
-    NODE N;
-    N.value = k;
-    N.next = NULL;
-    //find last node
-    while(P->next != NULL){
-        P = P->next;
+    NODEP N = (NODEP)malloc(sizeof(NODE));
+    N->value = k;
+    N->next = NULL;
+    //if linked list is empty
+    if(H == NULL){
+        H = N;
     }
-    //link it to the end
-    P->next = &N;
+    else{
+        LLIST P = H;
+        //find last node
+        while(P->next != NULL){
+            P = P->next;
+        }
+        //link it to the end
+        P->next = N;
+    }
     return H;
 }
 
 LLIST deleteFromFront(LLIST H, int *k){
-    *k = H->value;
-    LLIST P = H;
-    H = H->next;
-    free(P);
+    //if linked list is not empty
+    if(H != NULL){
+        *k = H->value;
+        LLIST P = H;
+        H = H->next;
+        free(P);
+    }
+    //return the head
     return H;
 }
 
 LLIST deleteFromEnd(LLIST H, int *k){
-    LLIST P = H;
-    //traverse to the second last node
-    while(P->next->next != NULL){
-        P = P->next;
+    //if linked list is not empty
+    if(H != NULL){
+        //P is current node, Q is previous node
+        LLIST P = H, Q = H;
+        //traverse to the last node
+        while(P->next != NULL){
+            Q = P;
+            P = P->next;
+        }
+        //retrieve value
+        *k = P->value;
+        //if linked list contains only one node
+        if(P == Q){
+            H = NULL;
+        }
+        else{
+            Q->next = NULL;
+        }
+        free(P);
     }
-    //get the last node
-    LLIST Q = P->next;
-    P->next = NULL;
-    *k = Q->value;
-    free(Q);
     //return the head
     return H;
 }

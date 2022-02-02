@@ -1,10 +1,12 @@
-typedef struct{
+typedef struct NODE{
     int value;
-    NODE *next;
+    struct NODE *next;
 }NODE;
 
 //pointer to the head of the linked list
 typedef NODE *LLIST;
+//Node Pointer
+typedef NODE *NODEP;
 
 LLIST createList();
 int searchList(LLIST, int);
