@@ -87,22 +87,3 @@ void printUF(UNION_FIND F){
         printf("\n");
     }
 }
-
-int main(){
-    UNION_FIND F = createUF(100);
-    int *i;
-    F = makeSetUF(F, 34, i);
-    F = makeSetUF(F, 19, i);
-    F = makeSetUF(F, 5, i);
-    F = makeSetUF(F, 23, i);
-    F = makeSetUF(F, 11, i);
-    F = makeSetUF(F, 47, i);
-    F = makeSetUF(F, 9, i);
-    F = makeSetUF(F, 28, i);
-    unionUF(F, 0, 5);
-    unionUF(F, 5, 6);
-    unionUF(F, 1, 2);
-    unionUF(F, 4, 7);
-    unionUF(F, 4, 1);
-    printUF(F);
-}
