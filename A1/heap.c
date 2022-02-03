@@ -66,7 +66,7 @@ HEAP extractMin(HEAP H){
 HEAP insertHeap(HEAP H, int k){
     (H->size)++;
     if(isFullHeap(H)){
-        printf("Min-Heap is full.\n")
+        printf("Min-Heap is full.\n");
         return H;
     }
     H->arr[H->size] = k;
