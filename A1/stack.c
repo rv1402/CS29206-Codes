@@ -18,11 +18,24 @@ STACK push(STACK S, int k){
 }
 
 STACK pop(STACK S, int *k){
-    if(isEmptyStack(S) == 1){
+    if(isEmptyStack(S)){
         printf("Stack is empty.\n");
     }
     else{
         S = deleteFromFront(S, k);
     }
     return S;
+}
+
+void printStack(STACK S){
+    if(isEmptyStack(S)){
+        printf("Stack is Empty.\n");
+        return;
+    }
+    printf("Top: %d\n", S->value);
+    S = S->next;
+    while(S != NULL){
+        printf("Val: %d\n", S->value);
+        S = S->next;
+    }
 }
