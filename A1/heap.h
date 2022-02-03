@@ -13,3 +13,4 @@ HEAP extractMin(HEAP H);
 HEAP insertHeap(HEAP H, int k);
 int isFullHeap(HEAP H);
 int isEmptyHeap(HEAP H);
+void printHeap(HEAP);
