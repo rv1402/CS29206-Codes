@@ -7,10 +7,10 @@ typedef struct{
 
 typedef HEAP_OBJ* HEAP;
 
-HEAP createHeap();
-int findMin(HEAP H);
-HEAP extractMin(HEAP H);
-HEAP insertHeap(HEAP H, int k);
-int isFullHeap(HEAP H);
-int isEmptyHeap(HEAP H);
-void printHeap(HEAP);
+extern HEAP createHeap();
+extern int findMin(HEAP H);
+extern HEAP extractMin(HEAP H);
+extern HEAP insertHeap(HEAP H, int k);
+extern int isFullHeap(HEAP H);
+extern int isEmptyHeap(HEAP H);
+extern void printHeap(HEAP);

@@ -1,9 +1,7 @@
-#include "llist.h"
-
 typedef LLIST STACK;
 
-STACK createStack();
-int isEmptyStack(STACK);
-STACK push(STACK, int);
-STACK pop(STACK, int *);
-void printStack(STACK);
+extern STACK createStack();
+extern int isEmptyStack(STACK);
+extern STACK push(STACK, int);
+extern STACK pop(STACK, int *);
+extern void printStack(STACK);

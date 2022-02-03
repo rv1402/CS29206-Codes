@@ -1,9 +1,7 @@
-#include "llist.h"
-
 typedef LLIST QUEUE;
 
-QUEUE createQueue();
-int isEmptyQueue(QUEUE);
-QUEUE enqueue(QUEUE, int);
-QUEUE dequeue(QUEUE, int *);
-void printQueue(QUEUE);
+extern QUEUE createQueue();
+extern int isEmptyQueue(QUEUE);
+extern QUEUE enqueue(QUEUE, int);
+extern QUEUE dequeue(QUEUE, int *);
+extern void printQueue(QUEUE);

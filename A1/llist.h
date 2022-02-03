@@ -8,10 +8,10 @@ typedef NODE *LLIST;
 //Node Pointer
 typedef NODE *NODEP;
 
-LLIST createList();
-int searchList(LLIST, int);
-LLIST insertAtFront(LLIST, int);
-LLIST insertAtEnd(LLIST, int);
-LLIST deleteFromFront(LLIST, int *);
-LLIST deleteFromEnd(LLIST, int *);
-LLIST deleteList(LLIST, int);
+extern LLIST createList();
+extern int searchList(LLIST, int);
+extern LLIST insertAtFront(LLIST, int);
+extern LLIST insertAtEnd(LLIST, int);
+extern LLIST deleteFromFront(LLIST, int *);
+extern LLIST deleteFromEnd(LLIST, int *);
+extern LLIST deleteList(LLIST, int);
