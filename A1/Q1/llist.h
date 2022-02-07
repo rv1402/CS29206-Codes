@@ -15,3 +15,4 @@ extern LLIST insertAtEnd(LLIST, int);
 extern LLIST deleteFromFront(LLIST, int *);
 extern LLIST deleteFromEnd(LLIST, int *);
 extern LLIST deleteList(LLIST, int);
+extern void freeList(LLIST);

@@ -1,0 +1,23 @@
+SHELL = /bin/sh
+CC = gcc
+CFLAGS = -O2 -g
+LIBNAME = libgraph.a
+OBJFILES = graph.o
+SHELL_PROFILE = .profile
+LIBDIR = /usr/include/newlib
+RM = rm -f
+
+library: graph.o
+	ar rcs libgraph.a graph.o $(LIBDIR)/libdatastructures.so
+
+graph.o: graph.h graph.c
+	cd ../Q1 && make -f makefile.basic install
+	gcc -L$(LIBDIR) -c graph.c -ldatastructures
+
+install: library
+	cp $(LIBNAME) $(LIBDIR)
+	cp graph.h /usr/include
+
+clean:
+	-$(RM) $(OBJFILES) $(LIBNAME)
+	cd ../Q1 && make -f makefile.basic clean

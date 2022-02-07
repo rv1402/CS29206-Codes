@@ -22,7 +22,7 @@ UNION_FIND createUF(int n){
 }
 
 UNION_FIND makeSetUF(UNION_FIND F, int x, int *i){
-    NODE_PTR P = (NODE_PTR)malloc(sizeof(NODE));
+    NODE_PTR P = (NODE_PTR)malloc(sizeof(UF_NODE));
     P->value = x;
     P->num_nodes = 1;
     P->next = NULL;

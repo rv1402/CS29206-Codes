@@ -7,6 +7,7 @@ typedef struct{
 
 typedef HEAP_OBJ* HEAP;
 
+extern void swap(int *, int *);
 extern HEAP createHeap();
 extern int findMin(HEAP H);
 extern HEAP extractMin(HEAP H);

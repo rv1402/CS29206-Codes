@@ -3,6 +3,10 @@ CC = gcc
 CFLAGS = -O2 -g -I. -fPIC
 LIBNAME = libdatastructures.so
 OBJFILES = llist.o stack.o queue.o heap.o union_find.o
+SHELL_PROFILE = .profile
+LIBDIR = /usr/include/newlib
+RM = rm -f
+
 library: $(OBJFILES)
 	gcc -shared -o $(LIBNAME) $(OBJFILES)
 
@@ -12,17 +16,12 @@ queue.o: llist.h queue.h
 heap.o: heap.h
 union_find.o: union_find.h
 
-LIBDIR = /usr/include/newlib
-
 install: library
 	-mkdir $(LIBDIR)
 	cp $(LIBNAME) $(LIBDIR)
 	cp llist.h stack.h queue.h heap.h union_find.h $(LIBDIR)
-
-RM = rm -f
+	grep -qxF '$(LIBDIR)' /etc/ld.so.conf || echo '$(LIBDIR)' >> /etc/ld.so.conf
+	ldconfig
 
 clean:
-	-$(RM) $(OBJFILES)
-
-distclean:
 	-$(RM) $(OBJFILES) $(LIBNAME)

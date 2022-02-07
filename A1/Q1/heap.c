@@ -31,6 +31,7 @@ int isEmptyHeap(HEAP H){
     return 0;
 }
 
+//delete minimum value from Heap
 HEAP extractMin(HEAP H){
     if(isEmptyHeap(H)){
         printf("Min-Heap is empty.\n");
@@ -63,6 +64,7 @@ HEAP extractMin(HEAP H){
     }
 }
 
+//insert a value into the heap
 HEAP insertHeap(HEAP H, int k){
     (H->size)++;
     if(isFullHeap(H)){

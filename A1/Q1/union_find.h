@@ -1,10 +1,10 @@
-typedef struct NODE{
+typedef struct UF_NODE{
     unsigned int value;
-    struct NODE *next;
+    struct UF_NODE *next;
     int num_nodes;
-}NODE;
+}UF_NODE;
 
-typedef NODE *NODE_PTR;
+typedef UF_NODE *NODE_PTR;
 
 typedef struct{
     //array to store n node pointers

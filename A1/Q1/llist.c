@@ -97,3 +97,12 @@ LLIST deleteList(LLIST H, int k){
     //return the head
     return H;
 }
+
+void freeList(LLIST H){
+    NODEP tmp;
+    while(H != NULL){
+        tmp = H;
+        H = H->next;
+        free(tmp);
+    }
+}
