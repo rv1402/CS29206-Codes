@@ -1,8 +1,8 @@
-##About
+<h2>About</h2>
 
 <p> This project implements linked list, stack, queue, heap and Union Find data structures and uses them on a user-defined graph to perform BFS, DFS and MST.</p>
 
-#Installation
+<h3>Installation</h3>
 
 <p> Clone project and download it.<br>
 Open terminal in the downloaded folder.<br>
